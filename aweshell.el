@@ -908,15 +908,7 @@ This function only return prefix when current point at eshell prompt line, avoid
       (prefix (and (derived-mode-p 'eshell-mode)
                    (aweshell-autosuggest--prefix)))
       (candidates (aweshell-autosuggest-candidates arg))
-      (sorted nil)))
-
-  (add-hook 'eshell-mode-hook
-            (lambda ()
-              (company-mode 1)
-              (setq-local company-idle-delay 0)
-              (setq-local company-backends '(aweshell-autosuggest))
-              ))
-  )
+      (sorted nil))))
 
 (provide 'aweshell)
 
